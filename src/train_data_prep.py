@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 24 17:04:45 2020
+
+@author: hudew
+"""
+
 import sys
 sys.path.insert(0,'C:\\Users\\hudew\\OneDrive\\桌面\\Denoise\\')
 import util
@@ -67,8 +74,8 @@ def BscanRegist(LN, radius, verbose):
         # display a sample
         if verbose == True and i == 200:
             plt.figure(figsize=(12,4))
-            plt.axis('off'),plt.title('Regist Result',font=15)
-            plt.imshow(np.concatenate((x[0,:,:],x[radius+1,:,:],x[-1,:,:]),axis=1))
+            plt.axis('off'),plt.title('Regist Result',fontsize=15)
+            plt.imshow(np.concatenate((x[0,:,:],x[radius+1,:,:],x[-1,:,:]),axis=1),cmap='gray')
             plt.show()   
     return opt
 
@@ -108,7 +115,7 @@ for i in range(len(vlist)):
     # Bscan registration for self-fusion
     print('Creating self-fusion data....')
     sf_data = BscanRegist(LN, sf_r, True)
-    with open('E:\\HumanData\\'+name+'.pickle','wb') as handle:
+    with open('E:\\HumanData\\'+name[8:-4]+'.pickle','wb') as handle:
         pickle.dump(sf_data,handle)
     del sf_data, HN, LN
     
