@@ -1,19 +1,21 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Sep 26 13:53:54 2020
+Created on Sat Sep 26 15:00:33 2020
 
-@author: hudew
+@author: hud4
 """
 
 import sys
 sys.path.insert(0,'/home/hud4/Desktop/20-summer/src/')
 import util
 
-import time, pickle, os, io
+import time, pickle, os
 import numpy as np
 import subprocess
 import matplotlib.pyplot as plt
 from PIL import Image
+from skimage import io
 
 def Display(x,y):
     plt.figure(figsize=(12,6))
@@ -21,10 +23,14 @@ def Display(x,y):
     plt.imshow(np.concatenate((x,y),axis=1),cmap='gray')
     plt.show()
 
-dataroot = 'E:\\HumanData\\'
+dataroot = '/home/hud4/Desktop/2020/Data/'
 Dir = '/home/hud4/Desktop/regi_result/'
 radius = 3
 
+# clean the temp dir in advance
+for file in os.listdir(Dir):
+    os.remove(Dir+file)
+                
 # Load data from pickle
 idx = 1
 
