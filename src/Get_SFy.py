@@ -28,8 +28,8 @@ Dir = '/home/hud4/Desktop/regi_result/'
 radius = 3
 
 # clean the temp dir in advance
-for file in os.listdir(Dir):
-    os.remove(Dir+file)
+for tif in os.listdir(Dir):
+    os.remove(Dir+tif)
                 
 # Load data from pickle
 idx = 1
@@ -64,8 +64,8 @@ for file in os.listdir(dataroot):
                 Display(x,v_sf[i,:,:])
             
             # clean up the temp directory
-            for file in os.listdir(Dir):
-                os.remove(Dir+file)
+            for tif in os.listdir(Dir):
+                os.remove(Dir+tif)
         
         util.nii_saver(v_sf,'/home/hud4/Desktop/2020/',file[:-7]+'.nii.gz')
         idx += 1
