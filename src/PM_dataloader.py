@@ -77,7 +77,7 @@ for i in range(len(HN_list)):
     train_data = GetPair(HN, SF, train_data)
 
 with open(dataroot+'PM_traindata.pickle','wb') as handle:
-    pickle.dump(handle)
+    pickle.dump(train_data,handle)
     
 print('done.')
     
