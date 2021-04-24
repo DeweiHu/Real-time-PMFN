@@ -6,7 +6,7 @@ real-time OCT denoising implemented on SECTR imaging system
 </p>
 
 ## Utilities
-Under /utils/ there are some functions used. **util.py** includes the Nifiti file reader/writer, intensity normalizer etc. **MotionCorrection.py** is the function used for rigid registration. **label_fusion** is joint label fusion sofware. **self_fusion.sh** is a shell script that inplement the label fusion software.
+Under /utils/ there are some functions used. **util.py** includes the Nifiti file reader/writer, intensity normalizer etc. **MotionCorrection.py** is the function used for rigid registration. **label_fusion** is joint label fusion sofware. **self_fusion.sh** is a shell script that inplement the label fusion software. There are 3 directories to be specified, dir of label_fusion, dir of c3d, dir of atlases (bscans in our case).
 
 ## Training of Nsf
 The model Nsf is used to map the high noise input <img src="https://render.githubusercontent.com/render/math?math=X_{i}"> to the self-fusion of the corresponding low noise image <img src="https://render.githubusercontent.com/render/math?math=S_{i}">. In /src/Nsf_train/, all the pre-processing and model training code is included. 
