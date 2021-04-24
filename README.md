@@ -6,7 +6,7 @@ real-time OCT denoising implemented on SECTR imaging system
 </p>
 
 ## Training of Nsf
-The model Nsf is used to map the high noise input <img src="https://render.githubusercontent.com/render/math?math=X_{i}"> to the self-fusion of the corresponding low noise image <img src="https://render.githubusercontent.com/render/math?math=S_{i}=SF([Y_{i-r},\hdots,Y_{i},\hdots,Y_{i+r}])">.
+The model Nsf is used to map the high noise input <img src="https://render.githubusercontent.com/render/math?math=X_{i}"> to the self-fusion of the corresponding low noise image <img src="https://render.githubusercontent.com/render/math?math=S_{i}=SF([Y_{i-r},...,Y_{i},...,Y_{i+r}])">.
 
 
 ## Model
