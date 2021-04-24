@@ -5,23 +5,9 @@ real-time OCT denoising implemented on SECTR imaging system
   <img src="/imgs/PMFN.png" width="850" title="PMFN pipeline">
 </p>
 
-## Main
-The main function applys the whole PMFN processing pipeline
+## Training of Nsf
+The model Nsf is used to map the high noise input <img src="https://render.githubusercontent.com/render/math?math=X_{i}"> to the self-fusion of the corresponding low noise image <img src="https://render.githubusercontent.com/render/math?math=S_{i}".>
 
-(1) Motion correction
-
-(2) Create pseudo-modality [network mimic of self-fusion]
-
-(3) Get edge map from pseudo-modality by sobel kernel
-
-(4) Denoising network
-
-## src
-The source functions are
-
-(1) MotionCorrection
-
-(2) util
 
 ## Model
 
