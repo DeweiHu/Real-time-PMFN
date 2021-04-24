@@ -2,8 +2,9 @@
 real-time OCT denoising implemented on SECTR imaging system
 
 <p align="center">
-  <img src="/imgs/PMFN.png" width="800" title="PMFN pipeline">
+  <img src="/imgs/PMFN.png" width="850" title="PMFN pipeline">
 </p>
+
 ## Main
 The main function applys the whole PMFN processing pipeline
 
