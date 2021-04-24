@@ -17,7 +17,7 @@ This file is used to get n-frame average <img src="https://render.githubusercont
 
 **(2) Get_SFy.py**
 
-Given the aligned r-neighborhood of <img src="https://render.githubusercontent.com/render/math?math=Y_{i}">, the self-fusion is applied to get <img src="https://render.githubusercontent.com/render/math?math=S_{i}">. 
+Given the aligned r-neighborhood of <img src="https://render.githubusercontent.com/render/math?math=Y_{i}">, the self-fusion is applied to get <img src="https://render.githubusercontent.com/render/math?math=S_{i}">. We call the subprocess to execute self_fusion.sh. Note that the directory of atlases should be consistant with $Dir in self_fusion.sh.
 
 **(3) PM_dataloader.py**
 
