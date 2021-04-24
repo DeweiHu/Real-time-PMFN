@@ -1,8 +1,9 @@
 # Real-time-PMFN
 real-time OCT denoising implemented on SECTR imaging system
 
-![pipeline](../master/Real-time-PMFN/imgs/PMFN.png)
-
+<p align="center">
+  <img src="https://github.com/DeweiHu/Real-time-PMFN/tree/master/imgs" width="350" title="PMFN pipeline">
+</p>
 ## Main
 The main function applys the whole PMFN processing pipeline
 
