@@ -18,7 +18,10 @@ Given the aligned r-neighborhood of <img src="https://render.githubusercontent.c
 
 (3) PM_dataloader.py
 
-The PM (stands for pseudo-modality) dataloader is used to pair (<img src="https://render.githubusercontent.com/render/math?math=X_{i}">,<img src="https://render.githubusercontent.com/render/math?math=S_{i}">). In order to provide sufficient information for the model to mimic the self-fusion. The input has 3 channels including <img src="https://render.githubusercontent.com/render/math?math=X_{i-1}">,<img src="https://render.githubusercontent.com/render/math?math=X_{i}">,<img src="https://render.githubusercontent.com/render/math?math=X_{i+1}">.
+The PM (stands for pseudo-modality) dataloader is used to pair (<img src="https://render.githubusercontent.com/render/math?math=X_{i}">,<img src="https://render.githubusercontent.com/render/math?math=S_{i}">). In order to provide sufficient information for the model to mimic the self-fusion. The input has 3 channels including <img src="https://render.githubusercontent.com/render/math?math=X_{i-1}">,<img src="https://render.githubusercontent.com/render/math?math=X_{i}">,<img src="https://render.githubusercontent.com/render/math?math=X_{i+1}">. Adjacent bscans are also registered. The output will be a pickled list. Each element of the list will be a (X,S) pair.
+
+(4) PM_train.py
+The training of the model. The architecture of the model is the multi-scale U-Net which is available under /Models/NetworkArch.py
 
 ## Model
 
