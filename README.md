@@ -16,6 +16,9 @@ This file is used to get n-frame average <img src="https://render.githubusercont
 
 Given the aligned r-neighborhood of <img src="https://render.githubusercontent.com/render/math?math=Y_{i}">, the self-fusion is applied to get <img src="https://render.githubusercontent.com/render/math?math=S_{i}">. 
 
+(3) PM_dataloader.py
+
+The PM (stands for pseudo-modality) dataloader is used to pair (<img src="https://render.githubusercontent.com/render/math?math=X_{i}">,<img src="https://render.githubusercontent.com/render/math?math=S_{i}">). In order to provide sufficient information for the model to mimic the self-fusion. The input has 3 channels including <img src="https://render.githubusercontent.com/render/math?math=X_{i-1}">,<img src="https://render.githubusercontent.com/render/math?math=X_{i}">,<img src="https://render.githubusercontent.com/render/math?math=X_{i+1}">.
 
 ## Model
 
