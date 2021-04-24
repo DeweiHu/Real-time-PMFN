@@ -27,6 +27,8 @@ The PM (stands for pseudo-modality) dataloader is used to pair (<img src="https:
 
 The training of the model. The architecture of the model is the multi-scale U-Net which is available under /Models/NetworkArch.py
 
+## Training of Ndn
+
 ## Model
 
 (1) The network architechture
