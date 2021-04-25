@@ -49,7 +49,7 @@ class Nsf_test_dataset(Data.Dataset):
         n,h,w = self.vx.shape
         
         self.data = []
-        for i in range(radius,n-radius+1):
+        for i in range(radius,n-radius):
             x = np.zeros([3,512,512],dtype=np.float32)
             
             im_fix = np.ascontiguousarray(np.float32(self.vx[i,:,:]))
@@ -106,6 +106,7 @@ if __name__=='__main__':
     for i in range(len(hn_list)):
         
         ln = util.nii_loader(dataroot+ln_list[i])
+        ln = ln[radius:-radius,:,:]
         sf_ln = util.nii_loader(dataroot+sf_list[i])
         
         Nsf_test_loader = Data.DataLoader(dataset=Nsf_test_dataset(dataroot+hn_list[i]))
@@ -134,11 +135,13 @@ if __name__=='__main__':
                 
             if step == 200:
                 plt.figure(figsize=(10,5))
-                plt.imshow(np.concatenate((x_stack[0,:,:],x_stack[1,:,:]),axis=1))
+                plt.axis('off')
+                plt.imshow(np.concatenate((x_stack[0,:,:],x_stack[1,:,:]),axis=1),cmap='gray')
                 plt.show()
                 
                 plt.figure(figsize=(10,5))
-                plt.imshow(np.concatenate((y1[0,:,:],y2[1,:,:]),axis=1))
+                plt.axis('off')
+                plt.imshow(np.concatenate((y1,y2),axis=1),cmap='gray')
                 plt.show()
 
 #%%
