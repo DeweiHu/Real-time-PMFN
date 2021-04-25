@@ -114,7 +114,7 @@ if __name__=='__main__':
         for step,x in enumerate(Nsf_test_loader):
             with torch.no_grad():
                 x = Variable(x).to(device)
-                pred = Nsf(x).detach.cpu().numpy()
+                pred = Nsf(x).detach().cpu().numpy()
                 
                 # high noise bscan -- Nsf(x) -- sobel
                 x_stack = np.zeros([3,512,512],dtype=np.float32)
