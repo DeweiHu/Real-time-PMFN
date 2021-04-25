@@ -48,6 +48,9 @@ This file is used to get Nsf(x) and sobel edge, stack them with the high noise b
 
 This is the training code for Ndn. The network architecture is also multi-scale U-Net (MSUN).
 
+## Testing
+The full testing of the whole pipeline is done by **main.py**
+
 ## Model
 
 (1) The network architechture
