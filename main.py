@@ -129,7 +129,7 @@ def PMFN_main(raw_Volume,FrameNum,nch,Nsf,Ndn,sf_display,dn_display):
                 x_opt = np.zeros([3,512,512],dtype=np.float32)
                 
                 bscans = x.detach().cpu().numpy()
-                x_opt[0,:,:] = bscans[0,3,:,:]
+                x_opt[0,:,:] = bscans[0,1,:,:]
                 
                 pred = util.ImageRescale(pred[0,0,:,:500],[0,255])
                 gradient = Sobel(pred,3)
@@ -203,7 +203,7 @@ def MSUN_main(raw_Volume,FrameNum,Ndn,dn_display):
 
 #%% load models
 gpu = 1
-nch_1 = 7
+nch_1 = 3
 nch_2 = 3
 modelroot = 'E:\\Model\\'
 device = torch.device("cuda:0" if( torch.cuda.is_available() and gpu>0 ) else "cpu")
