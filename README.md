@@ -15,6 +15,10 @@ The model Nsf is used to map the high noise input <img src="https://render.githu
 
 This file is used to get n-frame average <img src="https://render.githubusercontent.com/render/math?math=Y_{i}"> by (a) shown in the pipleline. Also, the 1st frame <img src="https://render.githubusercontent.com/render/math?math=X^{1}"> of the n repeats is extracted. Other than this, it register r-neighboring bscans of <img src="https://render.githubusercontent.com/render/math?math=Y_{i}"> and save it as a stack of (2r+1) channels for later self-fusion. In conclusion, there are 3 outputs for each raw volume, X,Y (Nifiti) and a pickle file that contains the low noise (Y) bscans stacks. 
 
+          X: HN_ONH_SNR_101_1.nii.gz
+          Y: LN_ONH_SNR_101_1.nii.gz
+          Y Stack: ONH_SNR_101_1.pickle
+
 **(2) Get_SFy.py**
 
 Given the aligned r-neighborhood of <img src="https://render.githubusercontent.com/render/math?math=Y_{i}">, the self-fusion is applied to get <img src="https://render.githubusercontent.com/render/math?math=S_{i}">. We call the subprocess to execute self_fusion.sh. Note that the directory of atlases should be consistant with $Dir in self_fusion.sh.
