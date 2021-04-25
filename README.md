@@ -49,7 +49,7 @@ This file is used to get Nsf(x) and sobel edge, stack them with the high noise b
 This is the training code for Ndn. The network architecture is also multi-scale U-Net (MSUN).
 
 ## Testing
-The full testing of the whole pipeline is done by **main.py**
+The full testing of the whole pipeline is done by **main.py**. Some parts are hard coded, it is now fit nch1=3 for Nsf (using 3 bscans to mimic self-fusion with 7 bscans). nch2=3 because the input of Ndn include (high noise bscan, SF, sobel edge). 
 
 ## Model
 
