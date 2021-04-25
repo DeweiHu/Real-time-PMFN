@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0,'C:\\Users\\hudew\\OneDrive\\桌面\\Denoise\\')
+sys.path.insert(0,'E:\\real-time-PMFN\\')
 import util
 import MotionCorrection as MC
 
@@ -85,6 +85,8 @@ nFrame = 5
 fixFrame = 0
 sf_r = 3
 
+saveroot = 'E:\\real-time-PMFN\\data\\'
+
 t1 = time.time()
 
 for i in range(len(vlist)):
@@ -96,8 +98,8 @@ for i in range(len(vlist)):
     # Frame-average 
     LN = FrameAver(HN,fixFrame)
     
-    util.nii_saver(HN[fixFrame,:,:,:],'E:\\HumanData\\','HN_{}.nii.gz'.format(name[8:-4]))
-    util.nii_saver(LN,'E:\\HumanData\\','LN_{}.nii.gz'.format(name[8:-4]))
+    util.nii_saver(HN[fixFrame,:,:,:],saveroot,'HN_{}.nii.gz'.format(name[8:-4]))
+    util.nii_saver(LN,saveroot,'LN_{}.nii.gz'.format(name[8:-4]))
     
     # display a sample
     plt.figure(figsize=(10,5))
@@ -108,7 +110,7 @@ for i in range(len(vlist)):
     # Bscan registration for self-fusion
     print('Creating self-fusion data....')
     sf_data = BscanRegist(LN, sf_r, True)
-    with open('E:\\HumanData\\'+name[8:-4]+'.pickle','wb') as handle:
+    with open(saveroot+name[8:-4]+'.pickle','wb') as handle:
         pickle.dump(sf_data,handle)
     del sf_data, HN, LN
     
