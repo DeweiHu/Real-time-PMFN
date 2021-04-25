@@ -59,7 +59,7 @@ for file in os.listdir(dataroot):
             for tif in os.listdir(Dir):
                 os.remove(Dir+tif)
         
-        util.nii_saver(v_sf,'/home/hud4/Desktop/2020/',file[:-7]+'.nii.gz')
+        util.nii_saver(v_sf,'/home/hud4/Desktop/2020/','SF_'+file[:-7]+'.nii.gz')
         idx += 1
         
 t2 = time.time()
