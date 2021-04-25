@@ -15,7 +15,7 @@ The model Nsf is used to map the high noise input <img src="https://render.githu
 
 This file is used to get n-frame average <img src="https://render.githubusercontent.com/render/math?math=Y_{i}"> by (a) shown in the pipleline. Also, the 1st frame <img src="https://render.githubusercontent.com/render/math?math=X^{1}"> of the n repeats is extracted. Other than this, it register r-neighboring bscans of <img src="https://render.githubusercontent.com/render/math?math=Y_{i}"> and save it as a stack of (2r+1) channels for later self-fusion. In conclusion, there are 3 outputs for each raw volume, X,Y (Nifiti) and a pickle file that contains the low noise (Y) bscans stacks. 
 
-          X: HN_ONH_SNR_101_1.nii.gz
+          X: HN_ONH_SNR_101_1.nii.gz  
           Y: LN_ONH_SNR_101_1.nii.gz
           Y Stack: ONH_SNR_101_1.pickle
 
@@ -32,6 +32,21 @@ The PM (stands for pseudo-modality) dataloader is used to pair (<img src="https:
 The training of the model. The architecture of the model is the multi-scale U-Net which is available under /Models/NetworkArch.py
 
 ## Training of Ndn
+To train Ndn, the input X has 3 channels and supervised by both <img src="https://render.githubusercontent.com/render/math?math=Y_{i}"> and <img src="https://render.githubusercontent.com/render/math?math=S_{i}">.
+        
+        X: channel 1 = high noise bscan 
+           channel 2 = output of Nsf
+           channel 3 = sobel edge
+        Y: y1 = n-frame average
+           y2 = self-fusion of n-frame average
+
+**(1) Ndn_dataloader.py**
+
+This file is used to get Nsf(x) and sobel edge, stack them with the high noise bscan and pair with ground truth.
+
+**(2) Ndn_train.py**
+
+This is the training code for Ndn. The network architecture is also multi-scale U-Net (MSUN).
 
 ## Model
 
