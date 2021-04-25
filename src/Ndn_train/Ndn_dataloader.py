@@ -147,4 +147,3 @@ if __name__=='__main__':
 #%%
     with open(dataroot+'Ndn_train_data.pickle','wb') as handle:
         pickle.dump(pair_data,handle)
-
